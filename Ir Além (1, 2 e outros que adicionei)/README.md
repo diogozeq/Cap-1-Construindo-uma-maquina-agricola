@@ -1,9 +1,9 @@
 ---
-## 4. Projeto "Ir Além": Dashboard Interativo com Inteligência Climática e Analítica Avançada
+## Projeto "Ir Além do além": Dashboard Interativo com Inteligência Climática e Analítica Avançada integrada a API
 
 Para transcender os requisitos básicos e demonstrar o verdadeiro potencial de um sistema de irrigação inteligente orientado a dados, desenvolvi um dashboard interativo (`dashboard_avancado.py`) utilizando a biblioteca Streamlit. Esta aplicação web não apenas visualiza os dados coletados, mas também integra inteligência climática em tempo real e oferece ferramentas de simulação e diagnóstico, representando um salto qualitativo em termos de usabilidade e suporte à decisão.
 
-### 4.1. Funcionalidades Chave do Dashboard Avançado:
+### Funcionalidades Chave do Dashboard Avançado:
 
 * **Visualização Dinâmica e Interativa de Dados Históricos:**
     * Apresentação dos dados históricos de umidade do solo, pH estimado e temperatura em gráficos de linha interativos (gerados com Plotly Express), permitindo a fácil identificação de tendências, padrões e correlações visuais.
@@ -32,7 +32,7 @@ Para transcender os requisitos básicos e demonstrar o verdadeiro potencial de u
         * Contagem da frequência de ocorrência de condições críticas (umidade excessivamente baixa ou pH fora dos limites críticos).
         * Com base nessas análises, o sistema oferece sugestões informativas e contextuais para potenciais otimizações nos parâmetros de irrigação ou para investigar possíveis problemas com sensores ou manejo do solo.
 
-### 4.2. Como Executar o Dashboard Interativo:
+### Como Executar o Dashboard Interativo:
 
 1.  Garanta que o banco de dados (`farmtech_phd_data_final_v2.db`) já foi criado e preferencialmente populado através da execução prévia do script `gerenciador_dados.py`.
 2.  No seu terminal, navegue até a pasta raiz do projeto `FarmTech_ESP32`.
