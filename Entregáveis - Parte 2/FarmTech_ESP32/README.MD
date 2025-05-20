@@ -1,7 +1,3 @@
-Este documento detalha um sistema abrangente de **gerenciamento e análise avançada de dados para irrigação inteligente**, desenvolvido em Python. O projeto é estruturado em duas entregas principais: um **Sistema Python de Gerenciamento e Análise Avançada de Dados** e um **Dashboard Interativo com Inteligência Climática**.
-
----
-
 ## Entrega 2: Sistema Python de Gerenciamento e Análise Avançada de Dados
 
 Esta fase do projeto concentrou-se na criação de uma solução de *backend* robusta em Python, projetada para armazenar, gerenciar e, de forma crucial, analisar dados de irrigação. O objetivo principal foi transformar esses dados em *insights* valiosos e acionáveis, otimizando os processos agrícolas.
@@ -85,34 +81,4 @@ O script `gerenciador_dados.py` constitui o núcleo da Entrega 2, fornecendo uma
 
 ---
 
-## Projeto "Ir Além": Dashboard Interativo com Inteligência Climática (`dashboard_avancado.py`)
-
-Buscando explorar ainda mais o potencial da solução e oferecer uma experiência de usuário superior, desenvolvi um *dashboard* interativo utilizando a biblioteca **Streamlit**. Este *dashboard* (`dashboard_avancado.py`) complementa as funcionalidades do `gerenciador_dados.py`, focando na visualização dinâmica e na simulação interativa.
-
-### Destaques e Funcionalidades do Dashboard:
-
-* **Visualização Dinâmica e Interativa de Dados Históricos:**
-    * Apresentação dos dados históricos de umidade do solo, pH e temperatura em **gráficos de linha interativos** (utilizando Plotly Express), permitindo a fácil identificação de tendências e padrões.
-    * Gráfico de barras para visualizar o histórico de acionamento da bomba de irrigação.
-    * Filtros de período (data inicial e final) para que o usuário possa analisar intervalos específicos do histórico de dados.
-    * Tabela de dados detalhada e formatada para o período selecionado.
-* **Integração em Tempo Real com API Meteorológica (Meteoblue):**
-    * Busca e exibe dados climáticos atuais e previsão para os próximos dias (pacote `basic-day`) e previsão horária detalhada (pacote `basic-1h`) para uma geolocalização configurável (Latitude/Longitude) diretamente na interface do *dashboard*.
-    * Utiliza a chave de API Meteoblue: `5239OsFXJijKVSDq` (embutida no código para facilidade de demonstração).
-    * Apresenta informações como temperatura máxima/mínima, precipitação total, probabilidade de chuva e *pictocode* para a previsão diária.
-    * Exibe temperatura horária, precipitação horária e probabilidade de chuva para as próximas horas.
-* **Simulador "What-If" Avançado com Inteligência Climática:**
-    * Uma ferramenta interativa que permite ao usuário inserir valores hipotéticos para os sensores da fazenda (umidade, pH, presença de P e K) através de *sliders* e botões de rádio.
-    * O sistema então simula a decisão da lógica de irrigação (replicada do ESP32 em Python), mas crucialmente, **incorpora a previsão de chuva atual obtida da API Meteoblue** para ajustar a recomendação final. Por exemplo, mesmo que os sensores da fazenda indiquem necessidade de irrigação, se houver previsão de chuva significativa nas próximas horas, o sistema recomendará não irrigar ou adiar a irrigação.
-    * Apresenta uma **"Análise de Risco Adicional"** que alerta o usuário se os próprios *inputs* para a simulação já configurarem uma condição preocupante (ex: umidade criticamente baixa ou pH fora da faixa crítica).
-    * Calcula e exibe a **"Economia Estimada"** (em R$) se a decisão de não irrigar for tomada devido à previsão de chuva, quantificando o benefício da inteligência climática.
-* **Módulos de Suporte à Decisão Integrados ao Histórico:**
-    * **Painel de Alertas Inteligentes e Proativos:** Na aba de visualização do histórico, o sistema analisa os dados mais recentes do período selecionado e exibe alertas visuais destacados (`st.warning` ou `st.error` simulado com markdown) para condições como umidade criticamente baixa ou pH fora da faixa de segurança, permitindo uma rápida identificação de problemas.
-    * **Estimativa de Custos Operacionais da Irrigação:** Também na aba de histórico, são calculados e exibidos os custos estimados de água e energia para o período de dados selecionado. Este cálculo é baseado no tempo total de acionamento da bomba (inferido pela frequência dos registros e um tempo de ciclo padrão) e nos parâmetros de custo definidos no `farmtech_config_phd.yaml`.
-    * **Mini-Diagnóstico do Sistema e Sugestões de Otimização (Beta):** Uma seção expansível na aba de histórico analisa o comportamento do sistema no período selecionado, incluindo:
-        * Umidade média no momento do acionamento da bomba, comparada com os limiares ideais.
-        * pH médio do período em relação à faixa ideal configurada.
-        * Frequência de ocorrência de condições críticas (umidade baixa ou pH crítico).
-        * Com base nessas análises, o sistema oferece sugestões informativas e contextuais para otimizar os parâmetros de irrigação ou investigar possíveis problemas.
-
-Este projeto integrado representa uma solução abrangente e analiticamente rica para o desafio da irrigação inteligente. O esforço em ir além dos requisitos básicos, especialmente na construção do *dashboard* interativo com inteligência climática e nas funcionalidades analíticas do sistema Python, reflete um profundo engajamento com o tema e um desejo de explorar o potencial máximo das ferramentas e conceitos envolvidos. O resultado é uma suíte de ferramentas que não apenas simula um sistema de irrigação, mas oferece uma plataforma robusta para análise de dados, suporte à decisão e demonstração do valor da agricultura de precisão.
+Este projeto integrado representa uma solução abrangente e analiticamente rica para o desafio da irrigação inteligente. O esforço em ir além dos requisitos básicos, especialmente na construção do *dashboard* interativo com inteligência climática (entrega 3) e nas funcionalidades analíticas do sistema Python, reflete um profundo engajamento com o tema e um desejo de explorar o potencial máximo das ferramentas e conceitos envolvidos. O resultado é uma suíte de ferramentas que não apenas simula um sistema de irrigação, mas oferece uma plataforma robusta para análise de dados, suporte à decisão e demonstração do valor da agricultura de precisão.
